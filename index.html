@@ -181,6 +181,29 @@
         </div>
       </div>
     </div>
+
+    <div class="project-card fade-up">
+      <div class="project-img-area" id="proj-img-1">
+        <div class="project-img-placeholder" onclick="document.getElementById('file-proj-1').click()">
+          <div class="upload-icon"><img src="Screenshot 2026-05-25 at 18.55.07.png" alt="Upload Icon"/></div>
+        </div>
+        <input type="file" id="file-proj-1" class="project-img-input" accept="image/*" onchange="setProjectImage(this, 'proj-img-1')"/>
+      </div>
+      <div class="project-body">
+        <div class="project-tags">
+          <span class="tag">Python</span>
+          <span class="tag">Machine Learning</span>
+        </div>
+        <h3 class="project-name">Toxic Comments Detector</h3>
+        <p class="project-desc">
+          A Python application that identifies and manages toxic comments using machine learning techniques. Categorizes comments by sentiment and severity.
+        </p>
+        <div class="project-links">
+          <a href="https://github.com/tanishas05/toxic-comments-detector" class="project-link">⬡ GitHub</a>
+          <a href="https://github.com/tanishas05/toxic-comments-detector" class="project-link">↗ Live</a>
+        </div>
+      </div>
+    </div>
  <!-- 
     Add Project Card 
     <div class="add-project-card" onclick="openModal()">
