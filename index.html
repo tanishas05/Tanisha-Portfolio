@@ -9,26 +9,29 @@
 </head>
 <body>
 
+<!-- ─── NAV ─── -->
 <nav>
   <div class="nav-logo">Tanisha Sharma<span>.</span></div>
-  <ul class="nav-links">
-    <ul class="nav-links">
-  <li><a href="#about">About</a></li>
-  <li><a href="#experience">Experience</a></li>
-  <li><a href="#projects">Projects</a></li>
-  <li><a href="#skills">Skills</a></li>
-  <li><a href="#achievements">Achievements</a></li>
-  <li><a href="#contact">Contact Me</a></li>
-  <li><a href="https://docs.google.com/document/d/1YFbGj3B_4PvbIEHt4z574pArN7hKJpI4Eyj942IsCL0/edit?usp=sharing" target="_blank" style="color: var(--accent);">Resume ↗</a></li>
-</ul>
+  <ul class="nav-links" id="nav-links">
+    <li><a href="#about" onclick="closeMenu()">About</a></li>
+    <li><a href="#experience" onclick="closeMenu()">Experience</a></li>
+    <li><a href="#projects" onclick="closeMenu()">Projects</a></li>
+    <li><a href="#skills" onclick="closeMenu()">Skills</a></li>
+    <li><a href="#achievements" onclick="closeMenu()">Achievements</a></li>
+    <li><a href="#contact" onclick="closeMenu()">Contact Me</a></li>
+    <li><a href="https://docs.google.com/document/d/1YFbGj3B_4PvbIEHt4z574pArN7hKJpI4Eyj942IsCL0/edit?usp=sharing" target="_blank" style="color: var(--accent);">Resume ↗</a></li>
   </ul>
+  <button class="hamburger" id="hamburger" onclick="toggleMenu()" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
 </nav>
 
+<!-- ─── HERO ─── -->
 <section id="hero" style="max-width:100%; padding-top: 8rem;">
   <div class="hero-content">
     <div class="hero-tag">Available for opportunities</div>
     <h1 class="hero-name">Tanisha<br><span class="highlight">Sharma</span></h1>
-    <p class="hero-title"> CS Student · Full Stack Dev · Open Source Contributor</p>
+    <p class="hero-title">CS Student · Full Stack Dev · Open Source Contributor</p>
     <p class="hero-desc">
       Sophomore Computer Science Engineer at IGDTUW, Delhi. Building scalable interfaces, contributing to open source, and solving problems one algorithm at a time.
     </p>
@@ -47,16 +50,16 @@
       </div>
     </div>
     <div class="hero-cta">
-  <a href="#projects" class="btn-primary">View Projects ↓</a>
-  <a href="https://docs.google.com/document/d/1YFbGj3B_4PvbIEHt4z574pArN7hKJpI4Eyj942IsCL0/edit?usp=sharing" target="_blank" class="btn-outline">Resume ↗</a>
-  <a href="#contact" class="btn-outline">Get In Touch</a>
-</div>
+      <a href="#projects" class="btn-primary">View Projects ↓</a>
+      <a href="https://docs.google.com/document/d/1YFbGj3B_4PvbIEHt4z574pArN7hKJpI4Eyj942IsCL0/edit?usp=sharing" target="_blank" class="btn-outline">Resume ↗</a>
+      <a href="#contact" class="btn-outline">Get In Touch</a>
+    </div>
   </div>
 
   <div class="hero-visual">
     <div class="avatar-ring">
       <div class="avatar-inner">
-       <img src="1778918013021.png" alt="Tanisha's Avatar" class="avatar-img"/>
+        <img src="1778918013021.png" alt="Tanisha Sharma" class="avatar-img"/>
       </div>
     </div>
     <div class="badge badge-1"><span>CGPA</span> 9.29 / 10</div>
@@ -64,6 +67,7 @@
   </div>
 </section>
 
+<!-- ─── ABOUT ─── -->
 <section id="about">
   <div class="section-header" style="grid-column: 1 / -1;">
     <span class="section-num">01</span>
@@ -89,7 +93,7 @@
   <div class="about-cards fade-up">
     <div class="about-card">
       <div class="about-card-title">University</div>
-      <div class="about-card-value"> Indira Gandhi Delhi Technical University for Women, New Delhi</div>
+      <div class="about-card-value">Indira Gandhi Delhi Technical University for Women, New Delhi</div>
     </div>
     <div class="about-card">
       <div class="about-card-title">Degree</div>
@@ -101,15 +105,16 @@
     </div>
     <div class="about-card">
       <div class="about-card-title">Role</div>
-      <div class="about-card-value"> Full Stack Dev · Class Representative </div>
+      <div class="about-card-value">Full Stack Dev · Class Representative</div>
     </div>
     <div class="about-card">
       <div class="about-card-title">Interests</div>
-      <div class="about-card-value"> Web Dev · DSA · Open Source · AI/ML </div>
+      <div class="about-card-value">Web Dev · DSA · Open Source · AI/ML</div>
     </div>
   </div>
 </section>
 
+<!-- ─── EXPERIENCE ─── -->
 <section style="max-width:1200px; margin: 0 auto; padding: 0 4rem 6rem;">
   <div id="experience" class="section-header">
     <span class="section-num">02</span>
@@ -152,6 +157,7 @@
   </div>
 </section>
 
+<!-- ─── PROJECTS ─── -->
 <section style="max-width:1200px; margin: 0 auto; padding: 0 4rem 6rem;">
   <div id="projects" class="section-header">
     <span class="section-num">03</span>
@@ -161,12 +167,10 @@
 
   <div class="projects-grid" id="projects-grid">
 
+    <!-- Project 1: TrashData -->
     <div class="project-card fade-up">
       <div class="project-img-area" id="proj-img-1">
-        <div class="project-img-placeholder" onclick="document.getElementById('file-proj-1').click()">
-          <div class="upload-icon"><img src="TrashData.png" alt="Upload Icon"/></div>
-        </div>
-        <input type="file" id="file-proj-1" class="project-img-input" accept="image/*" onchange="setProjectImage(this, 'proj-img-1')"/>
+        <img src="TrashData.png" alt="TrashData screenshot"/>
       </div>
       <div class="project-body">
         <div class="project-tags">
@@ -177,21 +181,18 @@
         </div>
         <h3 class="project-name">TrashData</h3>
         <p class="project-desc">
-          An Android app that identifies and manages unnecessary device files using AI-powered keyword analysis. Categorizes files by size, age, and metadata — then lets users safely delete junk with a single tap. Built with Kotlin, uses a custom ML pipeline to flag low-value files without false positives.        
+          An Android app that identifies and manages unnecessary device files using AI-powered keyword analysis. Categorizes files by size, age, and metadata — then lets users safely delete junk with a single tap. Built with Kotlin, uses a custom ML pipeline to flag low-value files without false positives.
         </p>
         <div class="project-links">
-          <a href="https://github.com/tanishas05/TrashData" class="project-link">⬡ GitHub</a>
-          <a href="https://github.com/tanishas05/TrashData" class="project-link">↗ Live</a>
+          <a href="https://github.com/tanishas05/TrashData" class="project-link" target="_blank">⬡ GitHub</a>
         </div>
       </div>
     </div>
 
+    <!-- Project 2: Wordikt -->
     <div class="project-card fade-up">
       <div class="project-img-area" id="proj-img-2">
-        <div class="project-img-placeholder" onclick="document.getElementById('file-proj-2').click()">
-          <div class="upload-icon"><img src="Wordikt.png" alt="Upload Icon"/></div>
-        </div>
-        <input type="file" id="file-proj-2" class="project-img-input" accept="image/*" onchange="setProjectImage(this, 'proj-img-2')"/>
+        <img src="Wordikt.png" alt="Wordikt screenshot"/>
       </div>
       <div class="project-body">
         <div class="project-tags">
@@ -202,19 +203,25 @@
         </div>
         <h3 class="project-name">Wordikt</h3>
         <p class="project-desc">
-Real-time comment toxicity classifier trained on 115K+ English and Hinglish comments. Uses TF-IDF char n-grams + LinearSVC to detect 6 toxicity categories with 89.5% accuracy. Features : live word-by-word analysis, bulk file upload with pause/resume, and a session dashboard with flagged term tracking.    
-          </p>
-        <div class="project-links">    
-          <a href="https://github.com/tanishas05/toxic-comments-detector" class="project-link">⬡ GitHub</a>
-          <a href="https://toxic-comments-detector.vercel.app" class="project-link">↗ Live</a>
+          Real-time comment toxicity classifier trained on 115K+ English and Hinglish comments. Uses TF-IDF char n-grams + LinearSVC to detect 6 toxicity categories with 89.5% accuracy. Features live word-by-word analysis, bulk file upload with pause/resume, and a session dashboard with flagged term tracking.
+        </p>
+        <div class="project-links">
+          <a href="https://github.com/tanishas05/toxic-comments-detector" class="project-link" target="_blank">⬡ GitHub</a>
+          <a href="https://toxic-comments-detector.vercel.app" class="project-link" target="_blank">↗ Live</a>
         </div>
       </div>
     </div>
 
+    <!-- Add Project Card 
+    <div class="add-project-card" onclick="openModal()">
+      <div class="add-icon">＋</div>
+      <span>add a project</span>
+    </div>
+-->
   </div>
 </section>
 
-
+<!-- ─── SKILLS ─── -->
 <section style="max-width:1200px; margin: 0 auto; padding: 0 4rem 6rem;">
   <div id="skills" class="section-header">
     <span class="section-num">04</span>
@@ -283,6 +290,7 @@ Real-time comment toxicity classifier trained on 115K+ English and Hinglish comm
   </div>
 </section>
 
+<!-- ─── ACHIEVEMENTS ─── -->
 <section style="max-width:1200px; margin: 0 auto; padding: 0 4rem 6rem;">
   <div id="achievements" class="section-header">
     <span class="section-num">05</span>
@@ -343,6 +351,7 @@ Real-time comment toxicity classifier trained on 115K+ English and Hinglish comm
   </div>
 </section>
 
+<!-- ─── CONTACT ─── -->
 <section id="contact" style="max-width:1200px; margin: 0 auto; padding: 0 4rem 8rem;">
   <div class="section-header">
     <span class="section-num">06</span>
@@ -357,17 +366,17 @@ Real-time comment toxicity classifier trained on 115K+ English and Hinglish comm
         I'm always open to internship opportunities, project collaborations, open-source contributions, and conversations about tech, design, and everything in between.
       </p>
       <div class="social-links">
-        <a href="https://www.linkedin.com/in/tanishas05/" class="social-link">
+        <a href="https://www.linkedin.com/in/tanishas05/" class="social-link" target="_blank">
           <div class="social-link-icon">in</div>
-          https://www.linkedin.com/in/tanishas05/
+          linkedin.com/in/tanishas05
         </a>
-        <a href="https://github.com/tanishas05" class="social-link">
+        <a href="https://github.com/tanishas05" class="social-link" target="_blank">
           <div class="social-link-icon">GH</div>
-          https://github.com/tanishas05
+          github.com/tanishas05
         </a>
-        <a href="https://leetcode.com/u/tanishas05/" class="social-link">
+        <a href="https://leetcode.com/u/tanishas05/" class="social-link" target="_blank">
           <div class="social-link-icon">LC</div>
-          https://leetcode.com/u/tanishas05/
+          leetcode.com/u/tanishas05
         </a>
         <a href="mailto:officialtanisha20@gmail.com" class="social-link">
           <div class="social-link-icon">✉</div>
@@ -377,10 +386,10 @@ Real-time comment toxicity classifier trained on 115K+ English and Hinglish comm
     </div>
 
     <form class="contact-form" action="https://formspree.io/f/mbdbolze" method="POST">
-      <input type="text" placeholder="Your Name" required />
-      <input type="email" placeholder="Your Email" required />
-      <input type="text" placeholder="Subject" />
-      <textarea placeholder="Your message..."></textarea>
+      <input type="text" name="name" placeholder="Your Name" required />
+      <input type="email" name="email" placeholder="Your Email" required />
+      <input type="text" name="subject" placeholder="Subject" />
+      <textarea name="message" placeholder="Your message..."></textarea>
       <button type="submit" class="btn-primary" style="align-self:flex-start; border:none; cursor:pointer;">
         Send Message →
       </button>
@@ -388,10 +397,39 @@ Real-time comment toxicity classifier trained on 115K+ English and Hinglish comm
   </div>
 </section>
 
+<!-- ─── FOOTER ─── -->
 <footer>
   <span>© 2025 Tanisha Sharma · IGDTUW, New Delhi</span>
 </footer>
 
+<!-- ─── ADD PROJECT MODAL ─── -->
+<div class="modal-overlay" id="project-modal">
+  <div class="modal">
+    <button class="modal-close" onclick="closeModal()">✕</button>
+    <h3>Add a Project</h3>
+    <div class="form-group">
+      <label>Project Name</label>
+      <input type="text" id="new-proj-name" placeholder="e.g. My Awesome App" />
+    </div>
+    <div class="form-group">
+      <label>Short Description</label>
+      <textarea id="new-proj-desc" placeholder="What does it do? What problem does it solve?"></textarea>
+    </div>
+    <div class="form-group">
+      <label>Tags (comma separated)</label>
+      <input type="text" id="new-proj-tags" placeholder="React, Python, API..." />
+    </div>
+    <div class="form-group">
+      <label>GitHub URL</label>
+      <input type="url" id="new-proj-github" placeholder="https://github.com/..." />
+    </div>
+    <div class="form-group">
+      <label>Live URL (optional)</label>
+      <input type="url" id="new-proj-live" placeholder="https://..." />
+    </div>
+    <button class="modal-submit" onclick="addProject()">Add Project →</button>
+  </div>
+</div>
 
 <script src="script.js"></script>
 </body>
