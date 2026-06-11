@@ -106,17 +106,19 @@ function closeMenu() {
   const el = document.getElementById('visitor-count');
   const counter = document.querySelector('.visitor-counter');
   if (!el || !counter) return;
-
-  // Always show the counter, never hide it
   counter.style.display = 'flex';
-  el.textContent = '—';
 
   try {
-    const res = await fetch('https://tanishas05.goatcounter.com/counter//_.json');
-    if (!res.ok) throw new Error('bad response');
+    // Uses countapi.dev — free, CORS-friendly replacement
+    const res = await fetch('https://countapi.dev/hit/tanisha-portfolio-wheat/visits', {
+      method: 'GET'
+    });
     const data = await res.json();
-    el.textContent = Number(data.count).toLocaleString();
+    el.textContent = Number(data.value).toLocaleString();
   } catch {
-    // keep showing '—' instead of hiding
+    // Fallback: count locally per browser
+    const local = parseInt(localStorage.getItem('pv') || '0') + 1;
+    localStorage.setItem('pv', local);
+    el.textContent = local.toLocaleString();
   }
 })();
