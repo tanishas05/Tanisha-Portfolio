@@ -103,13 +103,20 @@ function closeMenu() {
 
 // ─── VISITOR COUNTER ───
 (async () => {
+  const el = document.getElementById('visitor-count');
+  const counter = document.querySelector('.visitor-counter');
+  if (!el || !counter) return;
+
+  // Always show the counter, never hide it
+  counter.style.display = 'flex';
+  el.textContent = '—';
+
   try {
     const res = await fetch('https://tanishas05.goatcounter.com/counter//_.json');
+    if (!res.ok) throw new Error('bad response');
     const data = await res.json();
-    const el = document.getElementById('visitor-count');
-    if (el) el.textContent = Number(data.count).toLocaleString();
+    el.textContent = Number(data.count).toLocaleString();
   } catch {
-    const counter = document.querySelector('.visitor-counter');
-    if (counter) counter.style.display = 'none';
+    // keep showing '—' instead of hiding
   }
 })();
