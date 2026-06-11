@@ -936,16 +936,36 @@
 
     /* ─── FOOTER ─── */
     footer {
-      border-top: 1px solid var(--border);
-      padding: 2rem 4rem;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      font-size: 0.8rem;
-      color: var(--muted);
-      font-family: 'DM Mono', monospace;
-      text-align: center;
-    }
+  border-top: 1px solid var(--border);
+  padding: 2rem 4rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.8rem;
+  color: var(--muted);
+  font-family: 'DM Mono', monospace;
+  text-align: center;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+.visitor-counter {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.75rem;
+  color: var(--muted);
+  letter-spacing: 0.04em;
+}
+
+.visitor-dot {
+  width: 6px;
+  height: 6px;
+  background: var(--accent);
+  border-radius: 50%;
+  flex-shrink: 0;
+  animation: pulse 2s infinite;
+}
 
     /* ─── ANIMATIONS ─── */
     .fade-up {

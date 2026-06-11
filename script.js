@@ -100,3 +100,16 @@ function closeMenu() {
   document.getElementById('nav-links').classList.remove('open');
   document.getElementById('hamburger').classList.remove('open');
 }
+
+// ─── VISITOR COUNTER ───
+(async () => {
+  try {
+    const res = await fetch('https://tanishas05.goatcounter.com/counter//_.json');
+    const data = await res.json();
+    const el = document.getElementById('visitor-count');
+    if (el) el.textContent = Number(data.count).toLocaleString();
+  } catch {
+    const counter = document.querySelector('.visitor-counter');
+    if (counter) counter.style.display = 'none';
+  }
+})();
