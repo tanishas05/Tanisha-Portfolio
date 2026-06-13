@@ -109,14 +109,16 @@ function closeMenu() {
   counter.style.display = 'flex';
 
   try {
-    // Uses countapi.dev — free, CORS-friendly replacement
-    const res = await fetch('https://countapi.dev/hit/tanisha-portfolio-wheat/visits', {
-      method: 'GET'
-    });
+    // counterapi.dev — free, no sign-up, CORS-friendly
+    const res = await fetch('https://counterapi.dev/api/tanisha-portfolio/visits/up');
+    if (!res.ok) throw new Error('API error');
     const data = await res.json();
-    el.textContent = Number(data.value).toLocaleString();
+    // counterapi.dev returns { value: N }
+    const count = data.value ?? data.count ?? data.hits;
+    if (count == null) throw new Error('Unexpected response shape');
+    el.textContent = Number(count).toLocaleString();
   } catch {
-    // Fallback: count locally per browser
+    // Fallback: persist a local counter in localStorage
     const local = parseInt(localStorage.getItem('pv') || '0') + 1;
     localStorage.setItem('pv', local);
     el.textContent = local.toLocaleString();
