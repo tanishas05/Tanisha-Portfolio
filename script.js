@@ -109,12 +109,13 @@ function closeMenu() {
   counter.style.display = 'flex';
 
   try {
-    // counterapi.dev — free, no sign-up, CORS-friendly
-    const res = await fetch('https://counterapi.dev/api/tanisha-portfolio/visits/up');
+    // api.counterapi.dev — free, no sign-up, CORS-friendly, truly global
+    // Docs: https://counterapi.dev
+    const res = await fetch('https://api.counterapi.dev/v1/tanisha-portfolio/visits/up');
     if (!res.ok) throw new Error('API error');
     const data = await res.json();
-    // counterapi.dev returns { value: N }
-    const count = data.value ?? data.count ?? data.hits;
+    // Returns { count: N }
+    const count = data.count ?? data.value ?? data.hits;
     if (count == null) throw new Error('Unexpected response shape');
     el.textContent = Number(count).toLocaleString();
   } catch {
